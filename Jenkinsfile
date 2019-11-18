@@ -9,7 +9,7 @@ pipeline {
 					ls -lah
 				'''
 				dir('.'){
-					sh 'current directory path'
+					sh 'echo "current directory path"'
 					pwd();
 					withAWS(region:'us-east-1',credentials:'aws-static'){
 						s3Upload(file:index.html,bucket:'devops-project3',path:'./index.html')
