@@ -12,7 +12,7 @@ pipeline {
 					sh 'echo "current directory path"'
 					pwd();
 					withAWS(region:'us-east-1',credentials:'aws-static'){
-						s3Upload(file:'index.html',bucket:'devops-project3',path:'test/');
+						s3Upload(file:'index.html',bucket:'devops-project3',path:'/');
 					}
 				}
 			}
