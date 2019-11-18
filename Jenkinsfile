@@ -12,9 +12,7 @@ pipeline {
 					sh 'echo "current directory path"'
 					pwd();
 					withAWS(region:'us-east-1',credentials:'aws-static'){
-						def identity=awsIdentity();//Log AWS credentials
-							s3Upload(file:index.html,bucket:'devops-project3',path:'./index.html');
-
+						s3Upload(file:'index.html',bucket:'devops-project3',path:'./index.html');
 					}
 				}
 			}
